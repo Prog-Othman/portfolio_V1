@@ -1,0 +1,818 @@
+:root {
+    --primary: #8e05c2;
+    --black: #0f0f0f;
+    --white: #fff;
+    --gray: #7a7a7a;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+  }
+  
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1.5rem 6rem;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+    mix-blend-mode: difference;
+  }
+  
+  header .container .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .container .content .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header .container .content .logo a {
+    font: italic bold 1.5rem "IBM Plex Sans", sans-serif;
+    color: var(--white);
+  }
+  
+  header .container .content nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  header.aos-init.aos-animate.hidden {
+    transform: translateY(-100%);
+  }
+  
+  header .container .content nav a {
+    display: flex;
+    flex-direction: column;
+    font: 600 1rem "IBM Plex Sans", sans-serif;
+    color: var(--white);
+    transition: 0.2s linear;
+  }
+  
+  header .container .content nav a::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #fff;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+  }
+  
+  header .container .content nav a:hover::after {
+    transform: scaleX(1);
+    transition: 0.2s linear;
+  }
+  
+  header .container .content .extra-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .container .content .extra-nav a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 2rem;
+    border: 2px solid #fff;
+    border-radius: 16px;
+    font: 500 1rem "IBM Plex Sans", sans-serif;
+    color: #fff;
+    overflow: hidden;
+    mix-blend-mode: difference;
+  }
+  
+  header .container .content .extra-nav a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: var(--white);
+    border-radius: 50%;
+    padding: 2px;
+    transform: scale(0);
+    transition: transform 0.1s linear;
+  }
+  
+  header .container .content .extra-nav a:hover::before {
+    transform: scale(70);
+    transition: transform 0.1s linear;
+  }
+  
+  header .container .content .extra-nav a span {
+    position: relative;
+    transition: color 0.3s linear;
+  }
+  
+  header .container .content .extra-nav a:hover span {
+    color: var(--black);
+    transition: color 0.3s linear;
+  }
+  
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .hero .container .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero .container .content .shape-1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 30%;
+    animation: shape-1 60s infinite;
+  }
+  
+  .hero .container .content .shape-2 {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 30%;
+    animation: shape-2 120s infinite;
+  }
+  
+  .hero .container .content .line {
+    position: absolute;
+    width: 100%;
+    height: 4%;
+    transform: rotate(45deg);
+    background-color: #fff;
+    top: 0;
+    right: -100%;
+    filter: blur(50px);
+    animation: line 50s infinite;
+  }
+  
+  @keyframes line {
+    from {
+      right: -100%;
+      top: 0;
+      opacity: 30%;
+    }
+  
+    to {
+      right: 100%;
+      top: 100%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes shape-1 {
+    0% {
+      left: 0;
+      top: 0;
+    }
+    25% {
+      left: 50%;
+      top: 50%;
+    }
+    50% {
+      left: 30%;
+      top: 80%;
+    }
+    75% {
+      left: 20%;
+      top: 50%;
+    }
+    100% {
+      left: 0;
+      top: 0;
+    }
+  }
+  
+  @keyframes shape-2 {
+    0% {
+      left: 0;
+      top: 0;
+    }
+    25% {
+      left: 40%;
+      top: 70%;
+    }
+    50% {
+      left: 20%;
+      top: 50%;
+    }
+    75% {
+      left: 50%;
+      top: 100%;
+    }
+    100% {
+      left: 0;
+      top: 0;
+    }
+  }
+  
+  .hero .container .content .text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  
+  .hero .container .content .text h1 {
+    font: bolder 8rem "IBM Plex Sans", sans-serif;
+    line-height: 8rem;
+  }
+  
+  .hero .container .content .text .row-2 {
+    margin-left: -7rem;
+  }
+  
+  .hero .container .content .text .row-2 {
+    color: var(--black);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--white);
+  }
+  
+  .hero .container .content .arrow {
+    position: absolute;
+    bottom: 4rem;
+    cursor: pointer;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    fill: var(--white);
+    width: 75px;
+    height: 75px;
+    animation: arrow 2s infinite alternate;
+    transition: 0.2s linear;
+    z-index: 10;
+  }
+  
+  .hero .container .content .arrow:hover {
+    background-color: var(--white);
+    fill: var(--black);
+    transition: 0.2s linear;
+  }
+  
+  @keyframes arrow {
+    from {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(1.5rem);
+      opacity: 1;
+    }
+  }
+  
+  .hero .container .content .short-info {
+    position: absolute;
+    bottom: 5rem;
+    padding: 0 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+  }
+  
+  .hero .container .content .short-info .left-side,
+  .hero .container .content .short-info .right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .hero .container .content .short-info .left-side h1 {
+    font-size: 1.2rem;
+  }
+  
+  .hero .container .content .short-info .left-side p {
+    color: var(--gray);
+    font: bold 0.9rem "IBM Plex Sans", sans-serif;
+  }
+  
+  .hero .container .content .short-info .right-side p {
+    color: var(--gray);
+    font-weight: bold;
+  }
+  
+  .hero .container .content .short-info .right-side h1 {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    gap: 0.2rem;
+    font: bold 0.9rem "IBM Plex Sans", sans-serif;
+  }
+  
+  .hero .container .content .short-info .right-side h1 .pulse {
+    position: relative;
+    width: 6px;
+    height: 20px;
+    background: #ff6a00;
+    border-radius: 6px;
+  }
+  
+  .hero .container .content .short-info .right-side h1 .pulse::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    background: #ff6a00;
+    border-radius: 6px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .about {
+    position: relative;
+    margin: 4rem 0;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .about .container .content {
+    display: flex;
+    align-items: start;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .about .container .content .title {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+  }
+  
+  .about .container .content .title h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--gray);
+    margin-top: 6rem;
+  }
+  
+  .about .container .content .title h2 hr {
+    width: 90px;
+    padding: 2px;
+    border: none;
+    background-color: var(--gray);
+    margin-top: 4px;
+  }
+  
+  .about .container .content .title h1 {
+    font: italic bold 3.5rem "IBM Plex Sans", sans-serif;
+  }
+  
+  .about .container .content .profile-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about .container .content .profile-container .profile {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: end;
+    background: var(--gray);
+    border-radius: 64px;
+    overflow: hidden;
+  }
+  
+  .about .container .content .profile-container .profile img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .about .container .content .about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding-left: 4rem;
+    width: 25%;
+    height: 100%;
+  }
+  
+  .about .container .content .about-me p {
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.4rem;
+  }
+  
+  .about .container .content .about-me button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 45%;
+    padding: 12px;
+    background-color: var(--black);
+    border: 2px solid #fff;
+    border-radius: 32px;
+    font-weight: bold;
+    color: var(--white);
+    transition: all 0.2s linear;
+  }
+  
+  .about .container .content .about-me button:hover {
+    color: var(--black);
+    background-color: var(--white);
+  }
+  
+  .about .container .content .about-me button .arrow {
+    width: 20px;
+    transform: rotate(135deg);
+    fill: var(--white);
+    transition: all 0.2s linear;
+  }
+  
+  .about .container .content .about-me button:hover .arrow {
+    transform: rotate(180deg);
+    fill: var(--black);
+    transition: all 0.2s linear;
+  }
+  
+  .about .container .content .text-wrapper {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .about .container .content .text-wrapper .text {
+    display: flex;
+    flex-shrink: 0;
+    gap: 2rem;
+    animation: marquee 8s linear infinite;
+  }
+  
+  .about .container .content .text-wrapper .text h1 {
+    font: italic bold 9rem "IBM Plex Sans", sans-serif;
+    white-space: nowrap;
+  }
+  
+  .about .container .content .text-wrapper .text h1 span {
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--white);
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .project,
+  .contact {
+    margin: 4rem 0;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .project .container .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .project .container .content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .project .container .content .header button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 15%;
+    padding: 12px;
+    background-color: var(--black);
+    border: 2px solid #fff;
+    border-radius: 32px;
+    font-weight: bold;
+    color: var(--white);
+    transition: all 0.2s linear;
+  }
+  
+  .project .container .content .header button:hover {
+    color: var(--black);
+    background-color: var(--white);
+  }
+  
+  .project .container .content .header button .arrow {
+    width: 20px;
+    transform: rotate(135deg);
+    fill: var(--white);
+    transition: all 0.2s linear;
+  }
+  
+  .project .container .content .header button:hover .arrow {
+    transform: rotate(180deg);
+    fill: var(--black);
+    transition: all 0.2s linear;
+  }
+  
+  .project .container .content .header .title {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font: italic bold 1.5rem "IBM Plex Sans", sans-serif;
+  }
+  
+  .project .container .content .header .title .row-1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: end;
+    color: var(--gray);
+  }
+  
+  .project .container .content .header .title .row-1 hr {
+    width: 75px;
+    padding: 2px;
+    border: none;
+    background-color: var(--gray);
+    margin-top: 4px;
+  }
+  
+  .project .container .content .header .title .row-2 {
+    font-size: 3rem;
+  }
+  
+  .project .container .content .project-area {
+    position: relative;
+    display: flex;
+    height: 650px;
+    gap: 1rem;
+  }
+  
+  .project .container .content .project-area:hover .projects:not(:hover) img {
+    filter: brightness(100%);
+    transition: 0.3s linear;
+  }
+  
+  .project .container .content .project-area .projects {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    height: 100%;
+    background: var(--gray);
+    border-radius: 64px;
+    overflow: hidden;
+    filter: grayscale(100);
+  }
+  
+  .project .container .content .project-area .projects img {
+    filter: brightness(100%);
+    width: 100%;
+    height: 100%;
+    transition: 0.3s linear;
+  }
+  
+  .project .container .content .project-area .projects:hover img {
+    filter: brightness(30%);
+  }
+  
+  .project .container .content .project-area .projects .desc {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+  
+  .project .container .content .project-area .projects .desc h1 {
+    font: italic bold 4rem "IBM Plex Sans", sans-serif;
+  }
+  
+  .project .container .content .project-area .projects .desc p {
+    text-align: center;
+    width: 75%;
+  }
+  
+  .project .container .content .project-area .projects:hover .desc {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
+  
+  .contact .container .content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 2rem;
+  }
+  
+  .contact .container .content .title {
+    text-align: center;
+    font: italic bold 1.3rem "IBM Plex Sans", sans-serif;
+  }
+  
+  .contact .container .content .title h2 {
+    color: var(--gray);
+  }
+  
+  .contact .container .content .title h1 {
+    font-size: 3rem;
+  }
+  
+  .contact .container .content .contact-area {
+    display: flex;
+    height: 80%;
+  }
+  
+  .contact .container .content .contact-area .left-side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .contact .container .content .contact-area .left-side h1 {
+    font: 500 4rem "IBM Plex Sans", sans-serif;
+    margin-top: .5rem;
+    transform: scale(1, 1.5);
+  }
+  
+  .contact .container .content .contact-area .left-side h1:nth-child(2) {
+    margin-left: 30%;
+  }
+  
+  
+  .contact .container .content .contact-area .right-side {
+    width: 40%;
+    height: 100%;
+  }
+  
+  .contact .container .content .contact-area .right-side form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .contact .container .content .contact-area .right-side form input {
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--white);
+    outline: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    background: transparent;
+  }
+  
+  .contact .container .content .contact-area .right-side form input::placeholde,
+  .contact .container .content .contact-area .right-side form textarea::placeholder {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .contact .container .content .contact-area .right-side form textarea {
+    resize: none;
+    height: 150px;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--white);
+    outline: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    background: transparent;
+  }
+  
+  .contact .container .content .contact-area .right-side form button {
+    cursor: pointer;
+    padding: .7rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--white);
+    border-radius: 16px;
+    font: bold 1.2rem "IBM Plex Sans", sans-serif;
+    background: var(--black);
+    color: var(--white);
+    transition: .2s linear;
+  }
+  
+  .contact .container .content .contact-area .right-side form button:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transition: .2s linear;
+  }
+  
+  footer {
+    min-height: 20vh;
+  }
+  
+  footer .container .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  footer .container .content h1 {
+    font: italic bold 1.5rem "IBM Plex Sans", sans-serif;
+  }
+  
+  footer .container .content .social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  footer .container .content .social .logo {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--black);
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    fill: var(--white);
+    transition: 0.2s linear;
+  }
+  
+  footer .container .content .social .logo:hover {
+    background-color: var(--white);
+    fill: var(--black);
+    transition: 0.2s linear;
+  }
+  
+  footer .container .content .social p {
+    font-weight: bold;
+  }
