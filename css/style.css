@@ -427,11 +427,12 @@ textarea {
 .project-details__showcase-img-cont {
   width: 100%;
   margin-bottom: 6rem;
-  background: url(projectimage/345.jpeg);
+  /* background: url(projectimage/345.jpeg); */
  }
 
 .project-details__showcase-img {
-  width: 100%; }
+  width: 100%;
+  z-index: 1; }
 
 .project-details__content-main {
   width: 100%;
@@ -721,3 +722,15 @@ body.dark-mode {
 .main-footer__icon.dark-mode {
   filter: invert(1);
 } */
+
+.project-details__case-img img{
+  width: 703px;
+  display: flex;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  top: -525px;
+  height: 453px;
+  z-index: 2;
+}
